@@ -1,2 +1,111 @@
-# Halfduplex_udp_socket-demo
-This is a basic Python project that demonstrates a UDP-based chat application using socket programming. It allows two-way message exchange between clients over a network without needing a connection setup.
+# Half-Duplex UDP Client–Server Demo
+
+A minimal Python example demonstrating a half-duplex UDP “chat” between a sender (client) and a receiver (server). The sender reads user input, sends it to the server, and waits for a reply. Typing `0` cleanly shuts down both sides.
+
+---
+
+## Table of Contents
+
+- [Project Overview](#project-overview)  
+- [Prerequisites](#prerequisites)  
+- [Installation](#installation)  
+- [Usage](#usage)  
+  - [Running the Server](#running-the-server)  
+  - [Running the Client](#running-the-client)  
+- [Configuration](#configuration)  
+- [Project Structure](#project-structure)  
+- [Contributing](#contributing)  
+- [License](#license)  
+
+---
+
+## Project Overview
+
+This repo contains two Python scripts:
+
+- **receiver.py** – Binds to a UDP port, echoes incoming messages back in uppercase, and terminates on receiving the `exit` command.  
+- **sender.py** – Reads user input, sends it via UDP to the server, prints server responses, and exits on `exit`.  
+
+Together they illustrate a simple half-duplex exchange over UDP.
+
+---
+
+## Prerequisites
+
+- Python 3.6 or newer  
+- No external libraries required  
+
+---
+
+## Installation
+
+1. Clone this repository:  
+   ```bash
+   git clone https://github.com/your-username/udp-half-duplex-demo.git
+   cd udp-half-duplex-demo
+   ```  
+2. (Optional) Create and activate a virtual environment:  
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate       # on Linux/macOS
+   venv\Scripts\activate.bat      # on Windows
+   ```  
+
+---
+
+## Usage
+
+### Running the Server
+
+1. In one terminal window, start the UDP receiver:  
+   ```bash
+   python receiver.py
+   ```  
+2. The server will bind to port `1234` by default and wait for messages.
+
+### Running the Client
+
+1. In another terminal window, start the UDP sender:  
+   ```bash
+   python sender.py
+   ```  
+2. Enter any text and press Enter. The server will echo it back in uppercase.  
+3. To terminate the session, type `exit` and press Enter. Both client and server will close gracefully.
+
+---
+
+## Configuration
+
+You can customize host, port, and terminator values at the top of each script:
+
+| Variable         | Default    | Description                           |
+|------------------|------------|---------------------------------------|
+| `SERVER_HOST`    | localhost  | Hostname or IP of the UDP server      |
+| `SERVER_PORT`    | 1234       | UDP port number for both client/server|
+| `BUFFER_SIZE`    | 2048       | Maximum bytes per UDP message         |
+| `TERMINATOR`     | exit (0)   | Command string to shut down scripts   |
+
+---
+
+## Project Structure
+
+```
+udp-half-duplex-demo/
+├── receiver.py       # UDP server (half-duplex echo)
+├── sender.py         # UDP client (reads input, waits for reply)
+└── README.md         # Project documentation
+```
+
+---
+
+                                                                                                                                                     
+                                                                                                                                                     
+                                                                                                                                                    
+                                                                                                                                                     
+                                                                                                                                                     
+                                                                                                                                                     
+                                                                                                                                                     
+                                                                                                                                                     
+                                                                                                                                                     
+                                                                                                                                                     
+                                                                                                                                                     
