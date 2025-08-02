@@ -41,7 +41,7 @@ Together they illustrate a simple half-duplex exchange over UDP.
 
 1. Clone this repository:  
    ```bash
-   git clone https://github.com/your-username/udp-half-duplex-demo.git
+   git clone https://github.com/ahmad-rami-bit/udp-half-duplex-demo.git
    cd udp-half-duplex-demo
    ```  
 2. (Optional) Create and activate a virtual environment:  
